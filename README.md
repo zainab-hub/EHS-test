@@ -1,2 +1,0 @@
-# EHS-test
-Test automation
