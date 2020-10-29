@@ -1,16 +1,14 @@
 *** Settings ***
-
-Resource            ../CommonResource.robot
-Force Tags          MyTag
-
-
-*** Variables ***
-
-${robotVar} =            FooBarBaz
+Documentation
+Resource            ../Resources/EHS.robot
+Test Setup  Begin Web Test
+Test Teardown  End Web Test
 
 
-##*** Testcases ***
-#Given the adminstrator want to see a detailed information about a specific product
-#When the adminstrator click on "open"
-#Then product information will show up.
+
+*** Test Cases ***
+Inloggat adminstrator want to see information of a spesific product
+  Given adminstrator is at "EHS - All Items" page
+  When adminstrator click on "open"
+  Then product information will show up.
 

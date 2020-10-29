@@ -1,19 +1,16 @@
 *** Settings ***
-
-Resource            ../CommonResource.robot
-Force Tags          MyTag
-
-
-*** Variables ***
-
-${robotVar} =            FooBarBaz
+Documentation
+Resource            ../Resources/EHS.robot
+Test Setup  Begin Web Test
+Test Teardown  End Web Test
 
 
-##*** Testcases ***
-#Given Then admisnstrator want to be able to search for a specific product
-#when Adminstrator click on "Search bar"
-#And Adminstrator type produckt name
-#And Adminstrator click on "Find" button
-#Then A specific product will show up
+
+*** Test Cases ***
+Inloggat adminstrator want to search for a specific product
+  Given adminstrator is logged in
+  When adminstaror type product name
+  And adminstrator click on "Find" button
+  Then a specific product will show up
 
 
